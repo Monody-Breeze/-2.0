@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
@@ -10,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 namespace 智慧大鹏
 {
@@ -17,6 +19,7 @@ namespace 智慧大鹏
     {
         // 基于MOdbus通讯的库
         ModbusMaster master;
+        string connStr = "Server = 'PC-202310071457';DataBase = 'TestTemandHum';Uid = 'sa';Pwd='123456'";
         public Form1()
         {
             InitializeComponent();
@@ -60,14 +63,19 @@ namespace 智慧大鹏
         {
             // 获取当前时间
             DateTime now = DateTime.Now;
+            string Day = now.ToString("yyyy/MM/dd");
             string time = now.ToString("HH:mm:ss");
+            double tem = 0;
+            double hum = 0;
+            double CO2 = 0;
+            double Speed = 0;
 
             if (cb_wd.Checked)
             {
                 // 获取设备的信息
                 ushort[] values = master.ReadHoldingRegisters(1, 0x0000, 1);
 
-                double tem = values[0] / 10;
+                tem = values[0] / 10;
 
                 // chart1 图表
                 // chart1.Series[0]  显示温度的序列
@@ -79,11 +87,11 @@ namespace 智慧大鹏
                 // 获取设备的信息
                 ushort[] values = master.ReadHoldingRegisters(1, 0x0001, 1);
 
-                double tem = values[0] / 10;
+                hum = values[0] / 10;
 
                 // chart1 图表
                 // chart1.Series[0]  显示温度的序列
-                AddChartPoint(chart1.Series[1].Points, time, tem);
+                AddChartPoint(chart1.Series[1].Points, time, hum);
             }
 
             if (cb_yq.Checked)
@@ -91,26 +99,38 @@ namespace 智慧大鹏
                 // 获取设备的信息
                 ushort[] values = master.ReadHoldingRegisters(1, 0x0002, 1);
 
-                double tem = values[0] / 10;
+                CO2 = values[0] / 10;
 
                 // chart1 图表
                 // chart1.Series[0]  显示温度的序列
-                AddChartPoint(chart1.Series[2].Points, time, tem);
+                AddChartPoint(chart1.Series[2].Points, time, CO2);
             }
             if (cb_fs.Checked)
             {
                 // 获取设备的信息
                 ushort[] values = master.ReadHoldingRegisters(1, 0x0003, 1);
 
-                double tem = values[0];
+                Speed = values[0] / 100;
 
                 // chart1 图表
                 // chart1.Series[0]  显示温度的序列
-                AddChartPoint(chart1.Series[3].Points, time, tem);
+                AddChartPoint(chart1.Series[3].Points,time, Speed);
             }
 
             // 存储到数据库  时间  温度  湿度  风速  氧气 
+            InsertData(Day,tem,hum,CO2,Speed);
+        }
 
+        // 将数据添加到数据库里面的方法
+        private void InsertData(string time,double tem, double hum, double cO2, double speed)
+        {
+            string sql = $"insert into DataTemAndHumTable(Time,Tem,Hum,CO2,Speed) values('{time}',{tem},{hum},{cO2},{speed})";
+            using (SqlConnection conn = new SqlConnection(connStr))
+            { 
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql,conn);
+                cmd.ExecuteNonQuery();
+            }
         }
 
         /// <summary>
@@ -128,5 +148,12 @@ namespace 智慧大鹏
             }
         }
 
+        private void btn_history_Click(object sender, EventArgs e)
+        {
+            Select select = new Select();
+            select.ShowDialog();
+        }
+
+        
     }
 }

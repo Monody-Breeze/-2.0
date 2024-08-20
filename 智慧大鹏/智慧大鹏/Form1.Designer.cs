@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series29 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series30 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series31 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series32 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series41 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series42 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series43 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series44 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.cb_fs = new System.Windows.Forms.CheckBox();
             this.cb_yq = new System.Windows.Forms.CheckBox();
             this.cb_sd = new System.Windows.Forms.CheckBox();
@@ -107,6 +107,7 @@
             this.btn_history.TabIndex = 19;
             this.btn_history.Text = "历史查询";
             this.btn_history.UseVisualStyleBackColor = true;
+            this.btn_history.Click += new System.EventHandler(this.btn_history_Click);
             // 
             // btn_StartOrStop
             // 
@@ -138,44 +139,44 @@
             // 
             // chart1
             // 
-            chartArea8.AxisX.Title = "时间";
-            chartArea8.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Stacked;
-            chartArea8.AxisY.Title = "温度/湿度/氧气/风速";
-            chartArea8.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea8);
+            chartArea11.AxisX.Title = "时间";
+            chartArea11.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Stacked;
+            chartArea11.AxisY.Title = "温度/湿度/氧气/风速";
+            chartArea11.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea11);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend8.Name = "Legend1";
-            this.chart1.Legends.Add(legend8);
+            legend11.Name = "Legend1";
+            this.chart1.Legends.Add(legend11);
             this.chart1.Location = new System.Drawing.Point(0, 93);
             this.chart1.Name = "chart1";
-            series29.BorderWidth = 5;
-            series29.ChartArea = "ChartArea1";
-            series29.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series29.Color = System.Drawing.Color.Red;
-            series29.Legend = "Legend1";
-            series29.Name = "温度";
-            series30.BorderWidth = 5;
-            series30.ChartArea = "ChartArea1";
-            series30.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series30.Color = System.Drawing.Color.Lime;
-            series30.Legend = "Legend1";
-            series30.Name = "湿度";
-            series31.BorderWidth = 5;
-            series31.ChartArea = "ChartArea1";
-            series31.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series31.Color = System.Drawing.Color.Blue;
-            series31.Legend = "Legend1";
-            series31.Name = "氧气";
-            series32.BorderWidth = 5;
-            series32.ChartArea = "ChartArea1";
-            series32.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series32.Color = System.Drawing.Color.Fuchsia;
-            series32.Legend = "Legend1";
-            series32.Name = "风速";
-            this.chart1.Series.Add(series29);
-            this.chart1.Series.Add(series30);
-            this.chart1.Series.Add(series31);
-            this.chart1.Series.Add(series32);
+            series41.BorderWidth = 5;
+            series41.ChartArea = "ChartArea1";
+            series41.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series41.Color = System.Drawing.Color.Red;
+            series41.Legend = "Legend1";
+            series41.Name = "温度";
+            series42.BorderWidth = 5;
+            series42.ChartArea = "ChartArea1";
+            series42.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series42.Color = System.Drawing.Color.Lime;
+            series42.Legend = "Legend1";
+            series42.Name = "湿度";
+            series43.BorderWidth = 5;
+            series43.ChartArea = "ChartArea1";
+            series43.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series43.Color = System.Drawing.Color.Blue;
+            series43.Legend = "Legend1";
+            series43.Name = "氧气";
+            series44.BorderWidth = 5;
+            series44.ChartArea = "ChartArea1";
+            series44.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series44.Color = System.Drawing.Color.Fuchsia;
+            series44.Legend = "Legend1";
+            series44.Name = "风速";
+            this.chart1.Series.Add(series41);
+            this.chart1.Series.Add(series42);
+            this.chart1.Series.Add(series43);
+            this.chart1.Series.Add(series44);
             this.chart1.Size = new System.Drawing.Size(800, 357);
             this.chart1.TabIndex = 24;
             this.chart1.Text = "chart1";
@@ -222,6 +223,7 @@
             this.Controls.Add(this.btn_setinterval);
             this.Controls.Add(this.ipt_interval);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();

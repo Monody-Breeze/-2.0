@@ -11,3 +11,4 @@ C:\Users\Administrator\Desktop\智慧大鹏2.0\-2.0\智慧大鹏\智慧大鹏\ob
 C:\Users\Administrator\Desktop\智慧大鹏2.0\-2.0\智慧大鹏\智慧大鹏\obj\Debug\智慧大鹏.csproj.CopyComplete
 C:\Users\Administrator\Desktop\智慧大鹏2.0\-2.0\智慧大鹏\智慧大鹏\obj\Debug\智慧大鹏.exe
 C:\Users\Administrator\Desktop\智慧大鹏2.0\-2.0\智慧大鹏\智慧大鹏\obj\Debug\智慧大鹏.pdb
+C:\Users\Administrator\Desktop\智慧大鹏2.0\-2.0\智慧大鹏\智慧大鹏\obj\Debug\智慧大鹏.Select.resources
