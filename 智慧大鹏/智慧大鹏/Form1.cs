@@ -27,7 +27,7 @@ namespace 智慧大鹏
             serialPort1.DataBits = 8;
             serialPort1.BaudRate = 9600;
             serialPort1.StopBits = StopBits.One;
-            serialPort1.Parity = Parity.None;
+            serialPort1.Parity = Parity.Even;
             serialPort1.Open();
             master = ModbusSerialMaster.CreateRtu(serialPort1);
             //master.ReadHoldingRegisters(1,0x0000,1);
@@ -74,8 +74,43 @@ namespace 智慧大鹏
                 AddChartPoint(chart1.Series[0].Points,time,tem);
             }
 
+            if (cb_sd.Checked)
+            {
+                // 获取设备的信息
+                ushort[] values = master.ReadHoldingRegisters(1, 0x0001, 1);
+
+                double tem = values[0] / 10;
+
+                // chart1 图表
+                // chart1.Series[0]  显示温度的序列
+                AddChartPoint(chart1.Series[1].Points, time, tem);
+            }
+
+            if (cb_yq.Checked)
+            {
+                // 获取设备的信息
+                ushort[] values = master.ReadHoldingRegisters(1, 0x0002, 1);
+
+                double tem = values[0] / 10;
+
+                // chart1 图表
+                // chart1.Series[0]  显示温度的序列
+                AddChartPoint(chart1.Series[2].Points, time, tem);
+            }
+            if (cb_fs.Checked)
+            {
+                // 获取设备的信息
+                ushort[] values = master.ReadHoldingRegisters(1, 0x0003, 1);
+
+                double tem = values[0];
+
+                // chart1 图表
+                // chart1.Series[0]  显示温度的序列
+                AddChartPoint(chart1.Series[3].Points, time, tem);
+            }
+
             // 存储到数据库  时间  温度  湿度  风速  氧气 
-            
+
         }
 
         /// <summary>
