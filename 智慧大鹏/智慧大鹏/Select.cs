@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace 智慧大鹏
 {
@@ -38,6 +39,10 @@ namespace 智慧大鹏
                         CO2 = Convert.ToDouble(reader["CO2"]),
                         Speed = Convert.ToDouble(reader["Speed"])
                     };
+                    AddChartPoint(chart1.Series[0].Points, test.Time, test.Tem);
+                    AddChartPoint(chart1.Series[1].Points, test.Time, test.Hum);
+                    AddChartPoint(chart1.Series[2].Points, test.Time, test.CO2);
+                    AddChartPoint(chart1.Series[3].Points, test.Time, test.Speed);
                     LoadList.Add(test);
                 }
             }
@@ -76,10 +81,29 @@ namespace 智慧大鹏
                         CO2 = Convert.ToDouble(reader["CO2"]),
                         Speed = Convert.ToDouble(reader["Speed"])
                     };
+                    AddChartPoint(chart1.Series[0].Points,test.Time,test.Tem);
+                    AddChartPoint(chart1.Series[1].Points,test.Time,test.Hum);
+                    AddChartPoint(chart1.Series[2].Points,test.Time,test.CO2);
+                    AddChartPoint(chart1.Series[3].Points,test.Time,test.Speed);
                     SelectList.Add(test);
                 }
             }
             dgv.DataSource = SelectList;
+        }
+
+        /// <summary>
+        /// 添加点的方法
+        /// </summary>
+        /// <param name="points">序列集合</param>
+        /// <param name="time">时间</param>
+        /// <param name="value">值</param>
+        private void AddChartPoint(DataPointCollection points, string time, object value)
+        {
+            points.AddXY(time, value);
+            if (points.Count >= 15)
+            {
+                points.RemoveAt(0);
+            }
         }
     }
 }
