@@ -1,0 +1,13 @@
+C:\Users\Administrator\Desktop\智慧大鹏2.0\-2.0\智慧大鹏\智慧大鹏\bin\Debug\智慧大鹏.exe.config
+C:\Users\Administrator\Desktop\智慧大鹏2.0\-2.0\智慧大鹏\智慧大鹏\bin\Debug\智慧大鹏.exe
+C:\Users\Administrator\Desktop\智慧大鹏2.0\-2.0\智慧大鹏\智慧大鹏\bin\Debug\智慧大鹏.pdb
+C:\Users\Administrator\Desktop\智慧大鹏2.0\-2.0\智慧大鹏\智慧大鹏\bin\Debug\NModbus4.dll
+C:\Users\Administrator\Desktop\智慧大鹏2.0\-2.0\智慧大鹏\智慧大鹏\bin\Debug\NModbus4.xml
+C:\Users\Administrator\Desktop\智慧大鹏2.0\-2.0\智慧大鹏\智慧大鹏\obj\Debug\智慧大鹏.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\智慧大鹏2.0\-2.0\智慧大鹏\智慧大鹏\obj\Debug\智慧大鹏.Form1.resources
+C:\Users\Administrator\Desktop\智慧大鹏2.0\-2.0\智慧大鹏\智慧大鹏\obj\Debug\智慧大鹏.Properties.Resources.resources
+C:\Users\Administrator\Desktop\智慧大鹏2.0\-2.0\智慧大鹏\智慧大鹏\obj\Debug\智慧大鹏.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\智慧大鹏2.0\-2.0\智慧大鹏\智慧大鹏\obj\Debug\智慧大鹏.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\智慧大鹏2.0\-2.0\智慧大鹏\智慧大鹏\obj\Debug\智慧大鹏.csproj.CopyComplete
+C:\Users\Administrator\Desktop\智慧大鹏2.0\-2.0\智慧大鹏\智慧大鹏\obj\Debug\智慧大鹏.exe
+C:\Users\Administrator\Desktop\智慧大鹏2.0\-2.0\智慧大鹏\智慧大鹏\obj\Debug\智慧大鹏.pdb
