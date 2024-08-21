@@ -24,6 +24,10 @@ namespace 智慧大鹏
         {
             InitializeComponent();
         }
+        public double Sum(double a,double b)
+        {
+            return a + b;
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             serialPort1.PortName = "COM2";
